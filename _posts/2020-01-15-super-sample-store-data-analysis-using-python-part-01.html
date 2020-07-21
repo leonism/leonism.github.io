@@ -1,0 +1,345 @@
+---
+title: Sample Super Store Analysis Using Python & Pandas (Part 01)
+date: 2020-01-15 01:25:23 Z
+categories:
+- Python-Pandas
+layout: post
+description: An introduction to Sample SuperStore Dataset Walkthrough, Using Python
+  and the Pandas Library, while utilizing Jupyter Notebook as the IDE.
+subtitle: Introduction to Exploratory Data Analysis (EDA)
+keywords: Sample SuperStore, EDA, Python, Pandas, EDA
+background: "/img/posts/11.jpg"
+comments: true
+---
+
+<style>.aligncenter {text-align: center;}</style>
+
+<h3 id="1-introduction">1. Introduction</h1>
+<p>This tutorial is intended to give some quick, fundamental and brief overview on how to explore a dataset, which in this case is the Sample SuperStore. And to my best knowledge, it&#39;s coming from a fictional e-commerce or online marketplace company&#39;s annual sales figures. But the bottom line, the dataset would provide you with sufficient information on how you may work with an actual real life data. Among other things, this dataset consists of the following data types that may showcase the actual capabilities of what Pandas capable of delivering.</p>
+
+<ul>
+<li><code>Timestamp</code> or the timeseries datatypes.</li>
+<li>Both <code>Category</code> and <code>SubCategory</code> elements datatypes.</li>
+<li><code>Numerical</code> datatypes, so we may perform couple of numerical analysis.</li>
+<li>From the previous point, we sure can perform another features generation on this dataset.</li>
+</ul>
+
+<p>And with that being said, let&#39;s try to explore further the dataset, with the various built-in functionalities in the Panda&#39;s library for Python have to offer, while utilizing the <a href="https://jupyter.org/">Jupyter Notebook</a> as the main IDE of choice. And please don&#39;t forget to download the CSV file used on this project, you can download it from my GitHub account found <a href="https://github.com/leonism/sample-superstore/blob/master/data/superstore.csv">here</a>.</p>
+
+<h3 id="2-installation">2. Installation</h1>
+
+<p>First and foremost, this data exploration would assume you, to have one proper and working installation of the <a href="https://www.python.org/">Python</a> programming language. Secondly you have the <a href="https://jupyter.org/">Jupyter Notebook</a> and the <a href="https://pandas.pydata.org/">Pandas</a> library installed on your workstation, which we will use throughout the course of this data exploration.</p>
+
+<p>While the installation part for each of the mentioned pieces of software mentioned go beyond the scope of this tutorial, I would suggest that you head over to the official sites, and there you may discover further steps on how to download, install and setup the required programming language and libraries according to your operating systems. Once that you have settled with the whole installation and configuration issues, you may come back again to this page and follow along the instructions.</p>
+
+<ul>
+<li><a href="https://www.python.org/">Python Official Website</a>.</li>
+<li><a href="https://pandas.pydata.org/">Panda&#39;s Official Website</a>.</li>
+<li><a href="https://jupyter.org/">Jupyter Official Website</a>.</li>
+</ul>
+
+<h3 id="3-importing-library">3. Importing Library</h1>
+<p>Next, we need to load the Panda libraries onto our Jupyter Notebook environment. This way, it would tell Python, through the means available at Jupyter Notebook, to boot-up so we could utilize its built-ins functionalities available. Here&#39;s a snippet on how to do load your Pandas to Jupyter Notebook environement:</p>
+
+<pre><code><span class="hljs-meta"># Importing packages</span>
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+</code></pre><p>Now, that we have settled our first challenge, let&#39;s move further to read the datasets coming from a CSV file.</p>
+
+<h3 id="4-reading-dataset">4. Reading Dataset</h1>
+<p>The following code would imply these instructions</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>pd</code></em> = stands for Panda, it&#39;s the convention the community is using.</li>
+<li>_<code>.read_csv</code>_ = is a method within to read the CSV file.</li>
+<li>_<code>index_col</code>_ =&#39;Order ID&#39;</li>
+</ul>
+<pre><code><span class="hljs-comment"># Let's try to read from the superstore.csv</span>
+<span class="hljs-attr">df_orders</span> = pd.read_csv(<span class="hljs-string">'data/superstore.csv'</span>)
+</code></pre><p>If you notice form the above code, it&#39;s implying that we need to put our <code>superstore.csv</code> dataset on a directory called <code>data</code>. So once that you download the dataset, create a folder named <code>data</code> and put your <code>superstore.csv</code> file there on that particular directory or folder.</p>
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-01.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-01.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+<p><span class="caption text-muted">This is the default view of a dataset in Jupyter Notebook</span></p>
+
+<p>By default, Panda&#39;s built-in functionality, <strong>only showing 20 columns and 10 rows</strong> for each dataset, every time time you try to display them in the view. If you notice from the tabular data above, the dataset get truncated with triple dots sign <strong>&#39;...&#39;</strong> both for the rows and the columns. And since this dataset has 10800 rows with 21 columns, it&#39;ll only show the first 10 records for the row, with only 20 columns to the right instead of 21. As a side note, you can scroll the dataset both to the right and to the bottom, that way you can see the actual dataset content.</p>
+
+<h3 id="5-dropping-the-row-id-">5. Dropping The &quot;Row ID&quot;</h1>
+<p>The <em><code>&quot;Row ID&quot;</code></em> column is not really that informative, I think it would be safe enough for us to simply just delete them. That way, it would give us much more clarity over our dataset.</p>
+
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.drop</code></em> = the method being used to drop column.</li>
+<li><em><code>inplace=True</code></em> = we used them to keep the changes onward.</li>
+</ul>
+
+<pre>
+<code>df_orders.drop(<span class="hljs-string">"Row ID"</span>, <span class="hljs-attr">axis=1,</span> <span class="hljs-attr">inplace=True)</span>
+</code></pre><pre><code><span class="hljs-comment"># Let's call the previously defined data variable, the 'df_orders'</span>
+<span class="hljs-attribute">df_orders</span>
+</code>
+</pre>
+
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-02.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-02.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" >
+</p>
+
+<p><span class="caption text-muted">The first column has been changed from &#39;ROW ID&#39; to &#39;Order ID&#39;</span></p>
+<p>As you can see from the above table, we don&#39;t have the &#39;<strong>ROW ID</strong>&#39; no longer in place  and instead, it&#39;s being replaced by the &#39;<strong>Order ID</strong>&#39;.</p>
+
+
+<h3 id="6-change-the-index-column">6. Change &quot;The Index&quot; Column</h1>
+<p>By each time you&#39;re using <code>pd.read_csv(&#39;somedata.csv&#39;)</code>, that would yield the dataset&#39;s actual rows and columns, and we certainly have quite an extensive records of data, as being displayed from the previous function.</p>
+<p>As you may notice, the first column isn&#39;t the actual <em><code>&quot;Row ID&quot;</code></em> column, rather it&#39;s the default built-in feature Panda&#39;s bringing into the dataset. Let&#39;s try to change that into something much more useful. Now, let&#39;s revisit our previous Panda&#39;s function, but this time we add another parameter, the _<code>&quot;index_col&quot;</code>_ to be exact.</p>
+<p>Since that we wish to redo them again over a clean dataset, let&#39;s just call them again one more time with the<br>
+<code>&#39;df_orders = pd.read_csv(&#39;data/superstore.csv&#39;, index_col=&#39;Order ID&#39;)&#39;</code> function.</p>
+<p>Let&#39;s continue with the <code>&#39;df_orders&#39;</code> variable again. So don&#39;t be surprise if you see the &#39;<code>Row ID&#39;</code> column reappearing in the dataset since that would illustrate best our objective, but this time the <em>&#39;index column&#39;</em> values have changed from the value coming from the <code>&#39;Order ID</code>&#39; column instead.</p>
+
+<pre>
+<code><span class="hljs-comment"># Let's try to read again from the superstore.csv</span>
+<span class="hljs-attr">df_orders</span> = pd.read_csv(<span class="hljs-string">'data/superstore.csv'</span>, index_col=<span class="hljs-string">'Order ID'</span>)
+<span class="hljs-comment"># added the index_col='Order ID', parameter.</span>
+</code></pre><pre><code><span class="hljs-comment"># Let's call the previously defined data variable, the 'df_orders'</span>
+
+<span class="hljs-attribute">df_orders</span>
+</code></pre>
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-03.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-03.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+
+
+<p><span class="caption text-muted">The Index column has been changed, from default builtin, to &#39;Order ID&#39; column.</span></p>
+<p>Once that we tried to add the additional parameter, as you may notice, the first column have changed to &#39;<code>Order ID&#39;</code> column, rather then the previous Panda&#39;s built-in index column, and the other thing was, the fine print below each table now have changed, from 21 columns, to only 20 columns instead.</p>
+
+<h3 id="7-drop-the-row-id-change-the-index">7. Drop the Row ID &amp; Change The Index</h1>
+<p>On to our another objective, what if we wish to combine both of the features, with dropping the <code>&#39;Row ID</code>&#39; and to change the <code>&#39;Index</code>&#39; columns at the same time, so that we could get even leaner dataset to work with. With that kind of objective, we might need to combine both of the syntax to achive our objective.</p>
+<pre><code>df_orders.drop(<span class="hljs-string">"Row ID"</span>, <span class="hljs-attr">axis=</span><span class="hljs-number">1</span>, <span class="hljs-attr">inplace=</span><span class="hljs-literal">True</span>, <span class="hljs-attr">index_col=</span>'<span class="hljs-keyword">Order</span> <span class="hljs-title">ID</span>')
+</code></pre><ul>
+<li><code>.drop()</code> = this method to drop a column from the dataset.</li>
+<li><code>axis=1</code> = is the attribution value, on the dataset.</li>
+<li><code>inplace=True</code> = we used them to keep our changes onward.</li>
+<li><code>index_col</code> = make the defined column value, as our newly active index column instead.</li>
+</ul>
+<pre><code>df_orders = pd.read_csv('data/superstore.csv', <span class="hljs-attr">index_col=</span>'<span class="hljs-keyword">Order</span> <span class="hljs-title">ID</span>')
+df_orders.drop(<span class="hljs-string">"Row ID"</span>, <span class="hljs-attr">axis=</span><span class="hljs-number">1</span>, <span class="hljs-attr">inplace=</span><span class="hljs-literal">True</span>)
+</code></pre><pre><code><span class="hljs-comment"># Let's call the dataset again.</span>
+<span class="hljs-attribute">df_orders</span>
+</code></pre>
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-04.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-04.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+
+
+<p><span class="caption text-muted">The Index column has been changed, from default builtin, to &#39;Order ID&#39; column.</span></p>
+<p>Now, as you may see, from the below printed information, we only have 19 columns remaining left, coming from the initial 21 columns previously being shown. Now you may ask, &quot;But how come it&#39;s down to 19 columns, while we recall we only dropped 1 column?&quot;. The answer to that is due to the <code>&#39;index_col</code>&#39; method, whereas we define the <code>&#39;Order ID</code>&#39; to settle as the Index of the dataset. Pandas doesn&#39;t count that to a column, rather just another indexing attribution in the dataset.</p>
+
+<h3 id="8-default-number-rows-columns">8. Default Number Rows &amp; Columns</h1>
+<p>Let&#39;s try to set the maximum column and row to display, since by default the pandas library would display <strong>10 records</strong> of rows in total for a single dataset. The first 5 would coming from the top records, and the remaining would be coming from the last 5 records as a whole.</p>
+<p>But that&#39;s a little too much of information anyone could digest in a short glimpse, why don&#39;t we just minimize them down to 5 records instead. The same thing with the columns view, whereas Pandas would display you 20 columns, but since our current dataset only have 19 of them, then that should be fine.</p>
+<ul>
+<li>_<code>pd.set_option(&#39;display.max_columns&#39;, 20)</code>_ = setting the default column&#39;s view.</li>
+<li>_<code>pd.set_option(&#39;display.max_rows&#39;, 5)</code>_ = setting the default row&#39;s view.</li>
+</ul>
+<pre><code><span class="hljs-comment"># Let's try to read from the superstore.csv</span>
+pd.set_option(<span class="hljs-string">'display.max_columns'</span>, <span class="hljs-number">20</span>)
+pd.set_option(<span class="hljs-string">'display.max_rows'</span>, <span class="hljs-number">5</span>)
+</code></pre><pre><code># Let's <span class="hljs-keyword">try</span> <span class="hljs-keyword">to</span> give it a go <span class="hljs-keyword">with</span> the <span class="hljs-keyword">new</span> setting.
+df_orders
+</code></pre>
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-05.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-05.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+
+<p><span class="caption text-muted">Changing the default view in Pandas (illustration got truncated).</span></p>
+<h3 id="9-the-dataset-first-5-rows">9. The Dataset First 5 Rows</h1>
+<p>Here&#39;s another Pandas built-in method that may come handy. When you fell like taking a quick peek of the first 5 recrods from the top, the following code would deliver you those ouputs.</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.head()</code></em> = is the method to display the first five records of data coming from the dataset.</li>
+</ul>
+<pre><code><span class="hljs-selector-tag">df_orders</span><span class="hljs-selector-class">.head</span>()
+</code></pre>
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-06.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-06.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+<p><span class="caption text-muted">Viewing the first 5 rows of a dataset (illustration got truncated).</span></p>
+
+<h3 id="10-the-dataset-last-5-rows">10. The Dataset Last 5 Rows</h1>
+<p>Much like the above previous syntax, the similar can be apply to the bottom 5 records coming from your dataset. And you guess it right, the syntax would be <code>.tail()</code> and that would give you the last 5 records from the dataset.</p>
+<ul>
+<li><code>df_orders</code> = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><code>.tail()</code> = is the method to display the last five records of data coming from the dataset.</li>
+</ul>
+
+
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-07.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-07.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+
+
+<p><span class="caption text-muted">Viewing the last 5 rows of a dataset (illustration got truncated).</span></p>
+
+<h3 id="11-the-dataset-structure">11. The Dataset Structure</h3>
+<p>Now that you have one finer understanding on the previous aspect of importing library, loading the dataset and manipulate the views of the rows and the columns, let&#39;s now move on to the Dataset structure aspect. Whereas it&#39;s also an important area, before continuing the journey of exploring the dataset further.</p>
+<p>The dataset you get from the wild, might not always have the proper structure and data types you need. And before you could do further analysis and manipulation, let&#39;s make sure that both the structure and data types have been taken care of properly.</p>
+<h3 id="12-rows-columns">12. Rows &amp; Columns</h3>
+<p>Following are both the built-in method to achive our next objective, as we go more deeper over the analysis part of the dataset. Let&#39;s try to understand further of what how many rows and columns are there, we know this information from the previous part, but lucky for us, Pandas also provide us with a method di display the information in hand.</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.shape()</code></em> = is the method to display the number of rows and column.</li>
+</ul>
+<pre><code><span class="hljs-selector-tag">df_orders</span><span class="hljs-selector-class">.shape</span>
+</code></pre><p>(10800, 19)</p>
+<p>Aside from the fact, there are various other ways for us to know how many Rows and Columns available in your dataset, Pandas also has a builtin method to dispay those information. So now we understand that the dataset has the following total of information records.</p>
+<ul>
+<li><code>10800</code> coloumns</li>
+<li><code>19</code> coloumns</li>
+</ul>
+
+<h3 id="13-dataset-columns">13. Dataset Columns</h1>
+<p>Imagine that you&#39;re working with a large dataset, and by large, not just merely on the amounts of rows that it&#39;d produce. But also on the amount of columns spreaded from left to right. Good thing we&#39;re only working a 19 columns (from previously 21 columns in our dataset), now wouldn&#39;t it be nice to have a method to display all the columns available in our dataset? Well the good news is, Pandas shipped with a builtin method just to achive that.</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.columns</code></em> = is the method to display all the columns available in the dataset.</li>
+<li><em><code>.dtypes()</code></em> = is the method to display the data types from the dataset available.</li>
+</ul>
+<pre><code># Let's <span class="hljs-built_in">print</span> the <span class="hljs-built_in">columns</span> (<span class="hljs-built_in">features</span>) names.
+df_orders.<span class="hljs-built_in">columns</span>
+</code></pre><pre><code><span class="hljs-keyword">Index</span>([<span class="hljs-string">'Order Date'</span>, <span class="hljs-string">'Ship Date'</span>, <span class="hljs-string">'Ship Mode'</span>, <span class="hljs-string">'Customer ID'</span>, <span class="hljs-string">'Customer Name'</span>,
+       <span class="hljs-string">'Segment'</span>, <span class="hljs-string">'Country'</span>, <span class="hljs-string">'City'</span>, <span class="hljs-string">'State'</span>, <span class="hljs-string">'Postal Code'</span>, <span class="hljs-string">'Region'</span>,
+       <span class="hljs-string">'Product ID'</span>, <span class="hljs-string">'Category'</span>, <span class="hljs-string">'Sub-Category'</span>, <span class="hljs-string">'Product Name'</span>, <span class="hljs-string">'Sales'</span>,
+       <span class="hljs-string">'Quantity'</span>, <span class="hljs-string">'Discount'</span>, <span class="hljs-string">'Profit'</span>],
+      dtype=<span class="hljs-string">'object'</span>)
+</code></pre><h3 id="14-renaming-columns">14. Renaming Columns</h3>
+<p>Now it&#39;s just my way of doing things over the EDA aspect, is trying to eliminate any white spaces in between the columns name. It gets better and you may benefit alot from performing this method, and as we move on to something that&#39;s much more complicated within the data exploration, we&#39;ll benefit on the clarity aspect, too.</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.columns</code></em> = is the method to rename the column names.</li>
+</ul>
+<pre><code><span class="hljs-comment"># Let's try to rename the column.</span>
+df_orders.columns = [<span class="hljs-string">'OrderDate'</span>, <span class="hljs-string">'ShipDate'</span>, <span class="hljs-string">'ShipMode'</span>, <span class="hljs-string">'CustomerID'</span>, <span class="hljs-string">'CustomerName'</span>, <span class="hljs-string">'Segment'</span> , <span class="hljs-string">'Country'</span>, <span class="hljs-string">'City'</span>, <span class="hljs-string">'State'</span>, <span class="hljs-string">'PostalCode'</span>, <span class="hljs-string">'Region'</span>, <span class="hljs-string">'ProductID'</span>, <span class="hljs-string">'Category'</span>, <span class="hljs-string">'SubCategory'</span>, <span class="hljs-string">'ProductName'</span> , <span class="hljs-string">'Sales'</span>, <span class="hljs-string">'Quantity'</span>, <span class="hljs-string">'Discount'</span>, <span class="hljs-string">'Profit'</span>]
+</code></pre>
+<pre><code>df_orders</code></pre>
+
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-11.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-11.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+<p><span class="caption text-muted">The columns after being renamed. (illustration got truncated).</span></p>
+
+<h3 id="15-columns-data-type">15. Columns Data Type</h1>
+<p>Many times before you wish to explore further your columns in a dataset with some operation, you may need to make sure it&#39;s the correct data type that you&#39;re working with. For example, you wouldn&#39;t be able to do a division operation over a Timestamp data format, or multiply a String with with another string for that matter.</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.columns</code></em> = is the method to display all the columns available in the dataset.</li>
+<li><em><code>.dtypes()</code></em> = is the method to display the data types from the dataset available.</li>
+</ul>
+<pre><code><span class="hljs-comment"># Let's print the columns data types.</span>
+df_orders.<span class="hljs-keyword">info</span>()
+</code></pre>
+
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-12.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-12.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+<p><span class="caption text-muted">Viewing the data types of the dataset (illustration got truncated).</span></p>
+
+<h3 id="16-incorrect-columns-data-type">16. Incorrect Columns Data Type</h1>
+<p>As we can see from the above snippets, we have noticed there are couple of columns data types that were set incorrectly. For instance, the <code>OrderDate</code> data type was set to <code>object</code> data type instead of <code>datetime</code>, or the <code>PostalCode</code> was set to <code>float</code> data type, though you wouldn&#39;t do any calculation on top of it. Somewhere down the line with that kind of flaws, will lead us to even bigger problem if we don&#39;t try to fix them now. Let&#39;s try to patch those data types with the following methods.</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.astype</code></em> = is the method to change the coloumns data type in the dataset.</li>
+</ul>
+<pre><code><span class="hljs-comment"># Let's try to change the datatypes of the following column in the dataset.</span>
+df_orders[<span class="hljs-string">'OrderDate'</span>] = df_orders[<span class="hljs-string">'OrderDate'</span>].astype(<span class="hljs-string">'datetime64[ns]'</span>)
+df_orders[<span class="hljs-string">'ShipDate'</span>] = df_orders[<span class="hljs-string">'ShipDate'</span>].astype(<span class="hljs-string">'datetime64[ns]'</span>)
+df_orders[<span class="hljs-string">'PostalCode'</span>] = df_orders[<span class="hljs-string">'PostalCode'</span>].astype(<span class="hljs-string">'object'</span>)
+</code></pre><p>And now let&#39;s try to recheck them again, to see if the codes have worked as intended.</p>
+<pre><code><span class="hljs-comment"># Let's print the columns data types.</span>
+df_orders.<span class="hljs-keyword">info</span>()
+</code></pre>
+
+<p class="aligncenter">
+<img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-10.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-10.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+<p><span class="caption text-muted">We&#39;ve now changed the data types.</span></p>
+
+<h3 id="17-dataset-statistic-figures">17. Dataset Statistic Figures</h1>
+<p>If you&#39;re more into the statistician type, perhaps you may be also interested by the following methods to generate the figures with only a single line of <code>.describe</code> Pandas method.</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.describe</code></em> = is the method to pull out some statistics figures from the dataset.</li>
+<li>Short note, the <code>.describe</code> method would only work for numerical coloumn, and not categorical.</li>
+<li>While for the <code>(include=&#39;all&#39;)</code>, would work on both numerical &amp; categorical values.</li>
+</ul>
+<pre><code><span class="hljs-comment"># Describing statistical information on the dataset</span>
+<span class="hljs-attribute">df_orders</span>.describe()
+</code></pre>
+
+<p class="aligncenter"><img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-13.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-13.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+
+
+<p><span class="caption text-muted">Decent Statistic Facts on The Dataset.</span></p>
+<pre><code><span class="hljs-comment"># Describing more statistical information on the dataset</span>
+df_orders.describe(<span class="hljs-keyword">include</span>=<span class="hljs-string">'all'</span>)
+</code></pre>
+
+
+<p class="aligncenter"><img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-14.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-14.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+<p><span class="caption text-muted">Decent Statistic Facts on The Dataset.</span></p>
+
+<h3 id="18-statistic-figures">18. Statistic Figures</h1>
+<p>The following code would imply these instructions</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li><em><code>.count</code></em> = is the count value to a specific column.</li>
+<li><em><code>.mean</code></em> = is the std value to a specific column.</li>
+<li><em><code>.min</code></em> = is the min value to a specific column.</li>
+</ul>
+<pre><code>df_orders[<span class="hljs-string">"Sales"</span>].<span class="hljs-built_in">count</span>()
+</code></pre><p>Would give you the value of <code>&quot;9994&quot;</code>.</p>
+<pre><code><span class="hljs-selector-tag">df_orders</span><span class="hljs-selector-attr">["Sales"]</span><span class="hljs-selector-class">.mean</span>()
+</code></pre><p>Would give you the value of <code>&quot;229.8580008304938&quot;</code>.</p>
+<pre><code>df_orders[<span class="hljs-string">"Sales"</span>].<span class="hljs-built_in">std</span>()
+</code></pre><p>Would give you the value of <code>&quot;623.2451005086818&quot;</code>.</p>
+<pre><code>df_orders[<span class="hljs-string">"Sales"</span>].<span class="hljs-built_in">min</span>()
+</code></pre><p>Would give you the value of <code>&quot;0.444&quot;</code>.</p>
+
+<h3 id="19-exporting-dataset">19. Exporting Dataset</h1>
+<p>Once that we&#39;ve satisfied with our results, it&#39;s time to export them. So let&#39;s export them a new CSV dataset, so we could work with them on the next notebook tutorial.</p>
+<ul>
+<li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
+<li>_<code>.to_csv</code>_ = = is the export method to a CSV dataset.</li>
+<li><em><code>index = False</code></em> = we need to definet this index value set to False, since we don&#39;t want the index column.</li>
+</ul>
+<pre><code>df_orders.to_csv(<span class="hljs-string">'data/df_orders_exported.csv'</span>, <span class="hljs-keyword">index</span> =<span class="hljs-keyword">False</span>)
+</code></pre><p>Now go ahead and check your current working directory. you may find your <code>df_orders_exported.csv</code> there.</p>
+
+<h3 id="20-bonus-stage">20. Bonus Stage</h1>
+<p>Now that we&#39;ve come a long way of exploring our <code>superstore.csv</code> dataset, it&#39;s time to dive a little bit deeper of what, both Python and Pandas capable of delivering. Let&#39;s try to create a custom class in Python by leveraging our builtin Pandas method available in the library.</p>
+<pre><code><span class="hljs-comment"># Let's create a class named `display_all`, by which later we call on the next command.</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">display_all</span>
+<span class="hljs-params">(df_orders)</span>:</span>
+<span class="hljs-keyword">with</span> pd.option_context(<span class="hljs-string">"display.max_rows"</span>, <span class="hljs-number">1000</span>, <span class="hljs-string">"display.max_columns"</span>, <span class="hljs-number">1000</span>):
+        display(df_orders)
+</code></pre>
+<p>What it does basically, it creates a class named <code>display_all</code> and called the <code>df_orders</code> variable that we&#39;ve defined earlier at the top of this jupyter notebook tutorial. Next, we call the <code>pd.option_context</code> method that would provide us with the <code>display.max_rows</code> and the <code>dispplay.max_columns</code> attributions. And lastly we combine them all in the <code>display()</code> method by the end of the class.</p>
+<p>Now that we&#39;ve combine them all together, let&#39;s put them into action, and see what it delivers back to us this time.</p>
+
+<pre>
+<code>display_all(<span class="hljs-name">df_orders</span>.head(<span class="hljs-number">10</span>).T)
+</code>
+</pre>
+
+
+<p class="aligncenter"><img data-src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-15.jpg" src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-15.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
+<p><span class="caption text-muted">Now the dataset getting transposed in the view.</span></p>
+<pre>
+<code>display_all(<span class="hljs-name">df_orders</span>.describe(<span class="hljs-name">include=</span>'all').T)
+</code>
+</pre>
+
+<p>Since we&#39;ve defined the <code>display_all</code> from the previous class, we can now use it to explore further and combine them with different methods available in Pandas, much like the <code>.describe</code> attribute.</p>
+
+<p class="aligncenter">
+<img src="/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-16.jpg" alt="super-sample-store-data-analysis-using-python">
+</p>
+<p><span class="caption text-muted">Now the Statistic from the dataset getting transposed in the view.</span></p>
+<p>You&#39;ve made it this far, congratulations on achieving your first essential data-scienctist project. But there&#39;s more, if you wish to explore further or perhaps want to experiment, fork this Jupyter Notebook else even copy them to your working directory. I made everthing available on my <a href="https://github.com/leonism/sample-superstore">GitHub repository</a>. Got any questions? Fell free to ask them down below in the comment section, I&#39;ll try to get back to any inquiries as soon as I could. Hope you enjoy this tutorial, and thank you for reading them.</p>

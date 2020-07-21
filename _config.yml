@@ -1,0 +1,34 @@
+---
+title: DgPond.Com
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+description: Data Driven Marketing, Machine Learning, Growth Hacking and Everything
+  Sit in Between!
+author: Gerry Leo Nugroho
+email: gerryleonugroho@gmail.com
+baseurl: ''
+url: https://dgpond.com
+tagline: All Things Digital!
+subtitle: Thoughts on thoughts!
+permalink: "/:title/"
+twitter_username: gerryleonugroho
+github_username: leonism
+linkedin_username: gerryleonugroho
+facebook_username: 
+google_analytics: UA-169250289-1
+markdown: kramdown
+paginate: 5
+paginate_path: "/posts/page:num/"
+tag_page_layout: tag_page
+tag_page_dir: tag
+plugins:
+- jekyll-feed
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-seo-tag
