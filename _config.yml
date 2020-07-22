@@ -8,8 +8,7 @@ collections:
   uploads:
     title: Uploads
     output: true
-description: Data Driven Marketing, Machine Learning, Growth Hacking and Everything
-  Sit in Between!
+description: Data Driven Marketing, Machine Learning, Growth Hacking and EverythingSit in Between!
 author: Gerry Leo Nugroho
 email: gerryleonugroho@gmail.com
 baseurl: ''
@@ -32,3 +31,4 @@ plugins:
 - jekyll-paginate
 - jekyll-sitemap
 - jekyll-seo-tag
+
