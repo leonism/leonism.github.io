@@ -25,11 +25,11 @@
 source "https://rubygems.org"
 
 # gem "jekyll", "~> 3.8.5"
+# gem "jekyll-webp", "~> 1.0.0"
+# gem "jekyll-press"
 gem "jekyll", "~> 4.1.0"
-gem "jekyll-webp", "~> 1.0.0"
 gem "jekyll-seo-tag"
 gem "jekyll-theme-clean-blog"
-# gem "jekyll-press"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
