@@ -4,6 +4,6 @@ layout: home
 descriptions: 
 keywords: Data Driven Marketing, Digital Marketing, Machine Learning, Data Science
   & Dataiku
-background: "/img/bg-index.jpg"
+background: "/assets/img/bg-index.jpg"
 ---
 

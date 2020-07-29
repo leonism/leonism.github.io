@@ -2,7 +2,7 @@
 layout: page
 title: Contact Me
 description: Got Something to Say?
-background: '/img/bg-contact.jpg'
+background: '/assets/img/bg-contact.jpg'
 form: true
 ---
 

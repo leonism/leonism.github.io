@@ -1,54 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:8080/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:8080/" rel="alternate" type="text/html" /><updated>2020-07-26T03:44:53+00:00</updated><id>http://localhost:8080/feed.xml</id><title type="html">DgPond.Com</title><subtitle>Data Driven Marketing, Machine Learning, Growth Hacking and EverythingSit in Between!</subtitle><author><name>Gerry Leo Nugroho</name></author><entry><title type="html">FIFA’s Data Mining &amp;amp; Unsupervised Clustering Techniques with Dataiku</title><link href="http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/" rel="alternate" type="text/html" title="FIFA’s Data Mining &amp;amp; Unsupervised Clustering Techniques with Dataiku" /><published>2020-06-29T01:25:23+00:00</published><updated>2020-06-29T01:25:23+00:00</updated><id>http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku</id><content type="html" xml:base="http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/">&lt;style&gt;.aligncenter {text-align: center;}&lt;/style&gt;
-
-&lt;h3 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h3&gt;
-&lt;p&gt;If there&amp;#39;s one thing similar about an interesting dataset and a good rerun football&amp;#39;s match on TV, is that they&amp;#39;re both doing pretty excellent job at keeping everyone&amp;#39;s safe at home during this time of the pandemic. And in all honesty, I&amp;#39;m not a data-scientist, nor a dev guru. I just recently got myself exposed to  &lt;strong&gt;Machine Learning, Data Mining&lt;/strong&gt;  and  &lt;strong&gt;Artificial Intelligent&lt;/strong&gt;  in general, while doing them in both  &lt;strong&gt;Dataiku&lt;/strong&gt; and  &lt;strong&gt;Python (Pandas, NumPy and SciKit&lt;/strong&gt; libraries&lt;strong&gt;)&lt;/strong&gt;, somewhere a little over then 3 months period of time. And without any further ado, here&amp;#39;s my take to the FIFA conundrum&amp;#39;s challenge.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-29T02:35:42+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DgPond.Com</title><subtitle>Data Driven Marketing, Machine Learning, Growth Hacking and EverythingSit in Between!</subtitle><author><name>Gerry Leo Nugroho</name></author><entry><title type="html">FIFA’s Data Mining &amp;amp; Unsupervised Clustering Techniques with Dataiku</title><link href="http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/" rel="alternate" type="text/html" title="FIFA’s Data Mining &amp;amp; Unsupervised Clustering Techniques with Dataiku" /><published>2020-06-29T01:25:23+00:00</published><updated>2020-06-29T01:25:23+00:00</updated><id>http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku</id><content type="html" xml:base="http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/">&lt;h3 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h3&gt;
+&lt;p&gt;If there&amp;#39;s one thing similar about an interesting dataset and a good rerun football&amp;#39;s match on TV, is that they&amp;#39;re both doing pretty excellent job at keeping everyone&amp;#39;s safe at home during this time of the pandemic. And in all honesty, I&amp;#39;m not a data-scientist, nor a dev guru. I just recently got myself exposed to &lt;strong&gt;Machine Learning, Data Mining&lt;/strong&gt; and &lt;strong&gt;Artificial Intelligent&lt;/strong&gt; in general, while doing them in both  &lt;strong&gt;Dataiku&lt;/strong&gt; and  &lt;strong&gt;Python (Pandas, NumPy and SciKit&lt;/strong&gt; libraries&lt;strong&gt;)&lt;/strong&gt;, somewhere a little over then 3 months period of time. And without any further ado, here&amp;#39;s my take to the FIFA conundrum&amp;#39;s challenge.&lt;/p&gt;
 
 &lt;h3 id=&quot;2-dataflow&quot;&gt;2. Dataflow&lt;/h3&gt;
 &lt;p&gt;And since the challenge is not to  &lt;strong&gt;&amp;#39;predict&amp;#39;&lt;/strong&gt;  any variables, rather to &amp;#39;&lt;strong&gt;group&amp;#39;&lt;/strong&gt; or &amp;#39;&lt;strong&gt;cluster&amp;#39;&lt;/strong&gt;  the existing dataset from the player&amp;#39;s skillsets, in reflect to their  &lt;strong&gt;wages rate&lt;/strong&gt;. Here&amp;#39;s what my current flow would look like, and don&amp;#39;t bother much on the 2 additional datasets, as they&amp;#39;re merely exported from the existing model, so that I may explore them further later on. And to follow along, here&amp;#39;s the link to download the dataset in my 
 &lt;a href=&quot;https://github.com/leonism/dataiku-FIFA/blob/master/uploads/Conundrum_13_Data/Conundrum_13_Data.csv&quot;&gt;Github repository&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/workflow-diagram.png&quot; src=&quot;/img/posts/fifa-dataiku/workflow-diagram.png&quot; class=&quot;img-fluid&quot; alt=&quot;dataiku-fifa-analysis&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/workflow-diagram.png&quot; src=&quot;/assets/img/posts/fifa-dataiku/workflow-diagram.png&quot; class=&quot;img-fluid&quot; alt=&quot;dataiku-fifa-analysis&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 
 &lt;h3 id=&quot;3-prepare-recipes&quot;&gt;3. Prepare Recipes&lt;/h3&gt;
 &lt;p&gt;And here&amp;#39;s how I go about on the prepare recipes, nothing out of the ordinary. Just converting &lt;strong&gt;&lt;em&gt;categorical&lt;/em&gt;&lt;/strong&gt; to &lt;strong&gt;&lt;em&gt;numerical&lt;/em&gt;&lt;/strong&gt; values, through the &lt;strong&gt;&lt;em&gt;one-hot encoding&lt;/em&gt;&lt;/strong&gt; and filling up the &amp;#39;&lt;strong&gt;&lt;em&gt;NaN&lt;/em&gt;&lt;/strong&gt;&amp;#39; with median values, while grouping them to have better clarity, if ever the need occur for me to go back and revise anything again for future reference.&lt;/p&gt;
 
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/prepare-recipe.jpg&quot; src=&quot;/img/posts/fifa-dataiku/prepare-recipe.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;prepare recipe&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/prepare-recipe.jpg&quot; src=&quot;/assets/img/posts/fifa-dataiku/prepare-recipe.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;prepare recipe&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 
 &lt;h3 id=&quot;4-data-modeling-training&quot;&gt;4. Data Modeling &amp;amp; Training&lt;/h3&gt;
 &lt;p&gt;While on the  &lt;strong&gt;modeling&lt;/strong&gt;  and  &lt;strong&gt;training&lt;/strong&gt;  steps, I choose the &amp;#39;&lt;strong&gt;&lt;em&gt;Interactive Clustering&lt;/em&gt;&lt;/strong&gt;&amp;#39; machine-learning algorithm, which in returned, delivered me a sufficient scoring value. As a side note, Dataiku provide you with various Machine Learning Algorithm according to your prediction methods requirement. Be it for  &lt;strong&gt;Supervised Learning&lt;/strong&gt;  (develop predictive model based on both input and output data) and &lt;strong&gt;Unsupervised Learning (&lt;/strong&gt;group and interpret data based only on input data). And for the article alone, will be utilizing the later version of Unsupervised Learning for data mining/clustering.&lt;/p&gt;
 
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/model-results.png&quot; src=&quot;/img/posts/fifa-dataiku/model-results.png&quot; class=&quot;img-fluid&quot; alt=&quot;dataiku-data-modeling&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/model-results.png&quot; src=&quot;/assets/img/posts/fifa-dataiku/model-results.png&quot; class=&quot;img-fluid&quot; alt=&quot;dataiku-data-modeling&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;5-data-clustering&quot;&gt;5. Data Clustering&lt;/h3&gt;
 &lt;p&gt;On to the clustering variables name, I simply identified them in the grading manner, starting from &lt;strong&gt;&amp;#39;&lt;em&gt;Grading A&lt;/em&gt;&amp;#39;&lt;/strong&gt;, as the most top-knot performer, all the way down to the least performing one marked with &lt;strong&gt;&amp;#39;&lt;em&gt;Grading E&lt;/em&gt;&amp;#39;&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/grading-classification3.jpg&quot; src=&quot;/img/posts/fifa-dataiku/grading-classification3.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;dataiku-grading-classification&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/grading-classification3.jpg&quot; src=&quot;/assets/img/posts/fifa-dataiku/grading-classification3.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;dataiku-grading-classification&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;6-cluster-plot&quot;&gt;6. Cluster Plot&lt;/h3&gt;
 &lt;p&gt;And here&amp;#39;s how my cluster plot would look like, obviously the better the grade, the least volume of players getting included in them.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Acceleration x Wage&lt;/strong&gt;&lt;/p&gt;
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/acc-wages.png&quot; src=&quot;/img/posts/fifa-dataiku/acc-wages.png&quot; alt=&quot;dataiku-Acceleration-Wage&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/acc-wages.png&quot; src=&quot;/assets/img/posts/fifa-dataiku/acc-wages.png&quot; alt=&quot;dataiku-Acceleration-Wage&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Sliding Tackle x Wage&lt;/strong&gt;&lt;/p&gt;
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/sliding-tackle-wages.png&quot; src=&quot;/img/posts/fifa-dataiku/sliding-tackle-wages.png&quot; class=&quot;img-fluid&quot; alt=&quot;dataiku-Tackle-Wage&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/sliding-tackle-wages.png&quot; src=&quot;/assets/img/posts/fifa-dataiku/sliding-tackle-wages.png&quot; class=&quot;img-fluid&quot; alt=&quot;dataiku-Tackle-Wage&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;7-grading-variables&quot;&gt;7. Grading Variables&lt;/h3&gt;
 &lt;p&gt;And for sure, those who sit at the &lt;strong&gt;Grading A&lt;/strong&gt; level would stand above the average threshold measurements (though, that&amp;#39;s not always the case with other included variables, which I&amp;#39;m about to show down below).&lt;/p&gt;
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/variable-significant.jpg&quot; src=&quot;/img/posts/fifa-dataiku/variable-significant.jpg&quot; alt=&quot;variable-significant&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/variable-significant.jpg&quot; src=&quot;/assets/img/posts/fifa-dataiku/variable-significant.jpg&quot; alt=&quot;variable-significant&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;8-values-proposition&quot;&gt;8. Values Proposition&lt;/h3&gt;
 &lt;p&gt;And coming back again to the initial question, &lt;code&gt;&amp;quot;Creating a flow that outputs a value proposition in term of the wages&amp;quot;&lt;/code&gt;. I think I didn&amp;#39;t include the players name and their nationalities in my modeling for a couple of reasons. In my opinions, those two variables are just way too subjective to get included. In a sense, you could be a top-knot player, regardless of what your &amp;#39;Names&amp;#39; would sound like, and of course your &amp;#39;Nationalities&amp;#39;.&lt;/p&gt;
 
 &lt;p&gt;So I&amp;#39;ve done the DSS flow diagram, while the followings are my list of &amp;#39;value proposition&amp;#39; that contributed of being one &amp;#39;Grading-A&amp;#39; player in the field.&lt;/p&gt;
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/top-5-values-proposition.png&quot; src=&quot;/img/posts/fifa-dataiku/top-5-values-proposition.png&quot; alt=&quot;top-5-values-proposition&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/top-5-values-proposition.png&quot; src=&quot;/assets/img/posts/fifa-dataiku/top-5-values-proposition.png&quot; alt=&quot;top-5-values-proposition&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;9-top-5-values-proposition&quot;&gt;9. Top 5 Values Proposition&lt;/h3&gt;
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/values-by-distribution.png&quot; src=&quot;/img/posts/fifa-dataiku/values-by-distribution.png&quot; alt=&quot;values-by-distribution&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/values-by-distribution.png&quot; src=&quot;/assets/img/posts/fifa-dataiku/values-by-distribution.png&quot; alt=&quot;values-by-distribution&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;10-top-5-values-proposition-by-distribution&quot;&gt;10. Top 5 Values Proposition By Distribution&lt;/h3&gt;
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/fifa-dataiku/values-by-distribution-grading.png&quot; src=&quot;/img/posts/fifa-dataiku/values-by-distribution-grading.png&quot; alt=&quot;values-by-distribution-grading&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/fifa-dataiku/values-by-distribution-grading.png&quot; src=&quot;/assets/img/posts/fifa-dataiku/values-by-distribution-grading.png&quot; alt=&quot;values-by-distribution-grading&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;11-correlation-matrix&quot;&gt;11. Correlation Matrix&lt;/h3&gt;
 &lt;p&gt;The very first correlation analysis consists of plotting the &lt;em&gt;Correlation matrix&lt;/em&gt; for numerical variables. For each couple of numerical variables, this computes the &amp;quot;strength&amp;quot; of the correlation (called the Pearson coefficient):&lt;/p&gt;
@@ -59,8 +57,8 @@
 &lt;/ul&gt;
 &lt;p&gt;Since it does not really make sense to print this correlation plot for hundred of variables, we are restricting it to the first 50 numerical variables of the dataset.&lt;/p&gt;
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img src=&quot;/img/posts/fifa-dataiku/correlation-matrix.png&quot; alt=&quot;correlation-matrix&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;
-&lt;img src=&quot;/img/posts/fifa-dataiku/correlation-matrix-2.png&quot; alt=&quot;correlation-matrix-2&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;
+&lt;img src=&quot;/assets/img/posts/fifa-dataiku/correlation-matrix.png&quot; alt=&quot;correlation-matrix&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;
+&lt;img src=&quot;/assets/img/posts/fifa-dataiku/correlation-matrix-2.png&quot; alt=&quot;correlation-matrix-2&quot; class=&quot;img-fluid&quot; style=&quot;cursor: pointer;&quot;&gt;
 &lt;/p&gt;
 
 &lt;h3 id=&quot;11-jupyter-notebook&quot;&gt;11. Jupyter Notebook&lt;/h3&gt;
@@ -76,9 +74,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/leonism/dataiku-FIFA/blob/master/ipython_notebooks/Topic%20modeling%20on%20Conundrum_13_Data_prepared_scored%20(admin).ipynb&quot;&gt; Statistics and tests on multiple populations&quot; &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you wish to load the whole Project files into your working Dataiku&amp;#39;s project directory, download the whole files required at my GitHub repo as a single Zip file, and load them through the main interface.&lt;/p&gt;
-&lt;p&gt;Been enjoying exploring this dataset for sure, and certainly it was fun doing it, stays safe everyone and leave a thumbs-up if you like the article and found this useful. 😊&lt;/p&gt;</content><author><name>Gerry Leo Nugroho</name></author><category term="dataiku" /><summary type="html"></summary></entry><entry><title type="html">Kaggle’s StumbleUpon Challenge with Dataiku</title><link href="http://localhost:8080/kaggles-stumbleupon-challenge-with-dataiku/" rel="alternate" type="text/html" title="Kaggle’s StumbleUpon Challenge with Dataiku" /><published>2020-03-15T01:25:23+00:00</published><updated>2020-03-15T01:25:23+00:00</updated><id>http://localhost:8080/kaggles-stumbleupon-challenge-with-dataiku</id><content type="html" xml:base="http://localhost:8080/kaggles-stumbleupon-challenge-with-dataiku/">&lt;style&gt;.aligncenter {text-align: center;}&lt;/style&gt;
-
-&lt;h3 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h3&gt;
+&lt;p&gt;Been enjoying exploring this dataset for sure, and certainly it was fun doing it, stays safe everyone and leave a thumbs-up if you like the article and found this useful. 😊&lt;/p&gt;</content><author><name>Gerry Leo Nugroho</name></author><category term="dataiku" /><summary type="html">1. Introduction If there&amp;#39;s one thing similar about an interesting dataset and a good rerun football&amp;#39;s match on TV, is that they&amp;#39;re both doing pretty excellent job at keeping everyone&amp;#39;s safe at home during this time of the pandemic. And in all honesty, I&amp;#39;m not a data-scientist, nor a dev guru. I just recently got myself exposed to Machine Learning, Data Mining and Artificial Intelligent in general, while doing them in both Dataiku and Python (Pandas, NumPy and SciKit libraries), somewhere a little over then 3 months period of time. And without any further ado, here&amp;#39;s my take to the FIFA conundrum&amp;#39;s challenge.</summary></entry><entry><title type="html">Kaggle’s StumbleUpon Challenge with Dataiku</title><link href="http://localhost:4000/kaggles-stumbleupon-challenge-with-dataiku/" rel="alternate" type="text/html" title="Kaggle’s StumbleUpon Challenge with Dataiku" /><published>2020-03-15T01:25:23+00:00</published><updated>2020-03-15T01:25:23+00:00</updated><id>http://localhost:4000/kaggles-stumbleupon-challenge-with-dataiku</id><content type="html" xml:base="http://localhost:4000/kaggles-stumbleupon-challenge-with-dataiku/">&lt;h3 id=&quot;Introduction&quot;&gt;1. Introduction&lt;/h3&gt;
 
 &lt;p&gt;This Kaggle's &lt;a href=&quot;https://www.kaggle.com/c/stumbleupon&quot; title=&quot;StumbleUpon challenge&quot;&gt;StumbleUpon challenge&lt;/a&gt; has been around for sometimes by now, but I thought it'd be a great exercise to do them again, and this time we'll do it with the help of Dataiku platform. The idea is pretty much simple, how can we predict if an article getting submitted to StumbleUpon is an &quot;&lt;em&gt;ephemeral&lt;/em&gt;&quot; or an &quot;&lt;em&gt;evergreen&lt;/em&gt;&quot;. And as usual, Kaggle will provide you with both a train and test datasets from their site. Following paragraphs are simply taken from Kaggle's StumbleUpon page.&lt;/p&gt;
 
@@ -106,14 +102,14 @@
 &lt;p&gt;My approach toward this is pretty much straightforward, as a first step, it's required for you to download the whole dataset and have them imported to your working Dataiku project space. I would assume you know your way around to navigate the Dataiku's interface and be able to have the project space and data importing properly registered. And here's how my current data workflow would look like.&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/stumbleupon-dataiku/screencap-01.jpg&quot; src=&quot;/img/posts/stumbleupon-dataiku/screencap-01.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-01.jpg&quot; src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-01.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
 &lt;/p&gt;
 
 &lt;h3 id=&quot;4-datacleaning&quot;&gt;3. Cleaning-up The Data&lt;/h3&gt;
 &lt;p&gt;As with many other Machine Learning project out there, you wouldn't get a Model friendly dataset from the whole beginning of finding them. So our first objective would be to clean our dataset and turn them to a more machine learning friendly algorithm. Our current dataset's still requiring us to perform a lot of cleaning, since we can see that we still have unwanted characters much like a question mark, here and there.&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/stumbleupon-dataiku/screencap-02.jpg&quot; src=&quot;/img/posts/stumbleupon-dataiku/screencap-02.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-02.jpg&quot; src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-02.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
 &lt;/p&gt;
 
 &lt;h3 id=&quot;4-datacleaning&quot;&gt;4. Data Modeling&lt;/h3&gt;
@@ -122,7 +118,7 @@
 &lt;p&gt;And for the case, Dataiku is shipped with the feature by default. Choose the 'Two Class Classification' from the drop down menu and pick the label as the target that we wish predict, as shown by the pciture below.&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/stumbleupon-dataiku/screencap-03.jpg&quot; src=&quot;/img/posts/stumbleupon-dataiku/screencap-03.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-03.jpg&quot; src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-03.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
 &lt;/p&gt;
 
 
@@ -138,14 +134,14 @@
 &lt;/ul&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/stumbleupon-dataiku/screencap-04.jpg&quot; src=&quot;/img/posts/stumbleupon-dataiku/screencap-04.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-04.jpg&quot; src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-04.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
 &lt;/p&gt;
 
 &lt;h3 id=&quot;5-test-againts-the-test&quot;&gt;6. Run The Model Againts The Test Dataset&lt;/h3&gt;
 &lt;p&gt;Now that we've settled our model's score, it's time for the actual action of the game, which is testing them againts our test dataset. Simply click on the Machine Learning algorithm icon on the dataflow, click the score icon on the right hand panel and choose the to test them againts the test dataset. It's pretty much by straight forward, so simply just accept the default configuration that Dataiku would offer you.&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/stumbleupon-dataiku/screencap-06.jpg&quot; src=&quot;/img/posts/stumbleupon-dataiku/screencap-06.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-06.jpg&quot; src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-06.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
 &lt;/p&gt;
 
 
@@ -153,7 +149,7 @@
 &lt;p&gt;And there you have it, as our modeling and algorithm from previous walked-through scenario tested againts the test dataset, it would  by the end of it, yield us the following results. Please scroll to the right and by each row of the test dataset, now is getting added with 3 additional coloumns. First would be the &lt;em&gt;proba_0&lt;/em&gt;, &lt;em&gt;proba_1&lt;/em&gt; and &lt;em&gt;prediction&lt;/em&gt;. Luckily, this dataset is somewhat relatively easier to work with, and by some minor tweaks it already giving us a decent final score to test our test dataset againts with.&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/stumbleupon-dataiku/screencap-07.jpg&quot; src=&quot;/img/posts/stumbleupon-dataiku/screencap-07.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-07.jpg&quot; src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-07.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
 &lt;/p&gt;
 
 
@@ -161,7 +157,7 @@
 &lt;p&gt;What comes next after those previous preparation of data modeling and testing, comes the actual submission phase. At the Kaggle site, they would provide you with a template of the accepted data submission format. We simply need to follow it, make a local copy of our results by downloading from the data flow diagram, and have them uploaded to Kaggle submission button.&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/stumbleupon-dataiku/screencap-08.jpg&quot; src=&quot;/img/posts/stumbleupon-dataiku/screencap-08.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-08.jpg&quot; src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-08.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
 &lt;/p&gt;
 
 
@@ -169,7 +165,7 @@
 &lt;p&gt;After the submission process you'll get the final score in returned from Kaggle, as with the current submission, we're only getting 0.75, which accoding to my opinion wasn't that so bad. Cause after all, we're only scracthing from the surface, and only from a high level overview. But rest asure you can always tweaks your model and improvise your model again and have them resubmited to Kaggle in ordernto get better final score. But as of now, that should do it as for this current article&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/stumbleupon-dataiku/screencap-09.jpg&quot; src=&quot;/img/posts/stumbleupon-dataiku/screencap-09.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-09.jpg&quot; src=&quot;/assets/img/posts/stumbleupon-dataiku/screencap-09.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;stumble-upon&quot; &gt;
 &lt;/p&gt;
 
 
@@ -190,9 +186,7 @@
 &lt;li&gt;
 &lt;a href=&quot;https://github.com/leonism/Dataiku-StumbleUpon/blob/master/ipython_notebooks/Statistics%20and%20tests%20on%20a%20single%20population%20on%20test_prepared_scored%20(admin).ipynb&quot;&gt;Statistics and tests on a single population on test_prepared_scored (admin).ipynb&lt;/a&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Gerry Leo Nugroho</name></author><category term="dataiku" /><summary type="html"></summary></entry><entry><title type="html">Sample Super Store Analysis Using Python &amp;amp; Pandas (Part 01)</title><link href="http://localhost:8080/super-sample-store-data-analysis-using-python-part-01/" rel="alternate" type="text/html" title="Sample Super Store Analysis Using Python &amp;amp; Pandas (Part 01)" /><published>2020-01-15T01:25:23+00:00</published><updated>2020-01-15T01:25:23+00:00</updated><id>http://localhost:8080/super-sample-store-data-analysis-using-python-part-01</id><content type="html" xml:base="http://localhost:8080/super-sample-store-data-analysis-using-python-part-01/">&lt;style&gt;.aligncenter {text-align: center;}&lt;/style&gt;
-
-&lt;h3 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>Gerry Leo Nugroho</name></author><category term="dataiku" /><summary type="html">1. Introduction</summary></entry><entry><title type="html">Sample Super Store Analysis Using Python &amp;amp; Pandas (Part 01)</title><link href="http://localhost:4000/super-sample-store-data-analysis-using-python-part-01/" rel="alternate" type="text/html" title="Sample Super Store Analysis Using Python &amp;amp; Pandas (Part 01)" /><published>2020-01-15T01:25:23+00:00</published><updated>2020-01-15T01:25:23+00:00</updated><id>http://localhost:4000/super-sample-store-data-analysis-using-python-part-01</id><content type="html" xml:base="http://localhost:4000/super-sample-store-data-analysis-using-python-part-01/">&lt;h3 id=&quot;2-Introduction&quot;&gt;1. Introduction&lt;/h1&gt;
 &lt;p&gt;This tutorial is intended to give some quick, fundamental and brief overview on how to explore a dataset, which in this case is the Sample SuperStore. And to my best knowledge, it&amp;#39;s coming from a fictional e-commerce or online marketplace company&amp;#39;s annual sales figures. But the bottom line, the dataset would provide you with sufficient information on how you may work with an actual real life data. Among other things, this dataset consists of the following data types that may showcase the actual capabilities of what Pandas capable of delivering.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -236,7 +230,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you notice form the above code, it&amp;#39;s implying that we need to put our &lt;code&gt;superstore.csv&lt;/code&gt; dataset on a directory called &lt;code&gt;data&lt;/code&gt;. So once that you download the dataset, create a folder named &lt;code&gt;data&lt;/code&gt; and put your &lt;code&gt;superstore.csv&lt;/code&gt; file there on that particular directory or folder.&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-01.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-01.jpg&quot; class=&quot;lazy&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot;&gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-01.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-01.jpg&quot; class=&quot;lazy&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;This is the default view of a dataset in Jupyter Notebook&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;By default, Panda&amp;#39;s built-in functionality, &lt;strong&gt;only showing 20 columns and 10 rows&lt;/strong&gt; for each dataset, every time time you try to display them in the view. If you notice from the tabular data above, the dataset get truncated with triple dots sign &lt;strong&gt;&amp;#39;...&amp;#39;&lt;/strong&gt; both for the rows and the columns. And since this dataset has 10800 rows with 21 columns, it&amp;#39;ll only show the first 10 records for the row, with only 20 columns to the right instead of 21. As a side note, you can scroll the dataset both to the right and to the bottom, that way you can see the actual dataset content.&lt;/p&gt;
@@ -259,7 +253,7 @@
 
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-02.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-02.jpg&quot; class=&quot;lazy&quot; class=&quot;lazy&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-02.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-02.jpg&quot; class=&quot;lazy&quot; class=&quot;lazy&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;The first column has been changed from &amp;#39;ROW ID&amp;#39; to &amp;#39;Order ID&amp;#39;&lt;/span&gt;&lt;/p&gt;
@@ -283,7 +277,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-03.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-03.jpg&quot;  class=&quot;lazy&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-03.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-03.jpg&quot;  class=&quot;lazy&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 
 
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;The Index column has been changed, from default builtin, to &amp;#39;Order ID&amp;#39; column.&lt;/span&gt;&lt;/p&gt;
@@ -305,7 +299,7 @@ df_orders.drop(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Row ID&quot;&lt;/
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-04.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-04.jpg&quot;  class=&quot;lazy&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-04.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-04.jpg&quot;  class=&quot;lazy&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 
 
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;The Index column has been changed, from default builtin, to &amp;#39;Order ID&amp;#39; column.&lt;/span&gt;&lt;/p&gt;
@@ -326,7 +320,7 @@ df_orders
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-05.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-05.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-05.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-05.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;Changing the default view in Pandas (illustration got truncated).&lt;/span&gt;&lt;/p&gt;
 &lt;h3 id=&quot;9-the-dataset-first-5-rows&quot;&gt;9. The Dataset First 5 Rows&lt;/h1&gt;
@@ -339,7 +333,7 @@ df_orders
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-06.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-06.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-06.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-06.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;Viewing the first 5 rows of a dataset (illustration got truncated).&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;10-the-dataset-last-5-rows&quot;&gt;10. The Dataset Last 5 Rows&lt;/h1&gt;
@@ -352,7 +346,7 @@ df_orders
 
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-07.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-07.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-07.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-07.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 
 
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;Viewing the last 5 rows of a dataset (illustration got truncated).&lt;/span&gt;&lt;/p&gt;
@@ -401,7 +395,7 @@ df_orders.columns = [&lt;span class=&quot;hljs-string&quot;&gt;'OrderDate'&lt;/s
 
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-11.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-11.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-11.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-11.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;The columns after being renamed. (illustration got truncated).&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;15-columns-data-type&quot;&gt;15. Columns Data Type&lt;/h1&gt;
@@ -417,7 +411,7 @@ df_orders.&lt;span class=&quot;hljs-keyword&quot;&gt;info&lt;/span&gt;()
 
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-12.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-12.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-12.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-12.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;Viewing the data types of the dataset (illustration got truncated).&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;16-incorrect-columns-data-type&quot;&gt;16. Incorrect Columns Data Type&lt;/h1&gt;
@@ -436,7 +430,7 @@ df_orders.&lt;span class=&quot;hljs-keyword&quot;&gt;info&lt;/span&gt;()
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-10.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-10.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-10.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-10.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;We&amp;#39;ve now changed the data types.&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;17-dataset-statistic-figures&quot;&gt;17. Dataset Statistic Figures&lt;/h1&gt;
@@ -451,7 +445,7 @@ df_orders.&lt;span class=&quot;hljs-keyword&quot;&gt;info&lt;/span&gt;()
 &lt;span class=&quot;hljs-attribute&quot;&gt;df_orders&lt;/span&gt;.describe()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-13.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-13.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-13.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-13.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 
 
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;Decent Statistic Facts on The Dataset.&lt;/span&gt;&lt;/p&gt;
@@ -460,7 +454,7 @@ df_orders.describe(&lt;span class=&quot;hljs-keyword&quot;&gt;include&lt;/span&g
 &lt;/code&gt;&lt;/pre&gt;
 
 
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-14.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-14.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-14.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-14.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;Decent Statistic Facts on The Dataset.&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;18-statistic-figures&quot;&gt;18. Statistic Figures&lt;/h1&gt;
@@ -507,7 +501,7 @@ df_orders.describe(&lt;span class=&quot;hljs-keyword&quot;&gt;include&lt;/span&g
 &lt;/pre&gt;
 
 
-&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-15.jpg&quot; src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-15.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
+&lt;p class=&quot;aligncenter&quot;&gt;&lt;img data-src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-15.jpg&quot; src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-15.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot; &gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;Now the dataset getting transposed in the view.&lt;/span&gt;&lt;/p&gt;
 &lt;pre&gt;
 &lt;code&gt;display_all(&lt;span class=&quot;hljs-name&quot;&gt;df_orders&lt;/span&gt;.describe(&lt;span class=&quot;hljs-name&quot;&gt;include=&lt;/span&gt;'all').T)
@@ -517,7 +511,7 @@ df_orders.describe(&lt;span class=&quot;hljs-keyword&quot;&gt;include&lt;/span&g
 &lt;p&gt;Since we&amp;#39;ve defined the &lt;code&gt;display_all&lt;/code&gt; from the previous class, we can now use it to explore further and combine them with different methods available in Pandas, much like the &lt;code&gt;.describe&lt;/code&gt; attribute.&lt;/p&gt;
 
 &lt;p class=&quot;aligncenter&quot;&gt;
-&lt;img src=&quot;/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-16.jpg&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot;&gt;
+&lt;img src=&quot;/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-16.jpg&quot; alt=&quot;super-sample-store-data-analysis-using-python&quot;&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;Now the Statistic from the dataset getting transposed in the view.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;You&amp;#39;ve made it this far, congratulations on achieving your first essential data-scienctist project. But there&amp;#39;s more, if you wish to explore further or perhaps want to experiment, fork this Jupyter Notebook else even copy them to your working directory. I made everthing available on my &lt;a href=&quot;https://github.com/leonism/sample-superstore&quot;&gt;GitHub repository&lt;/a&gt;. Got any questions? Fell free to ask them down below in the comment section, I&amp;#39;ll try to get back to any inquiries as soon as I could. Hope you enjoy this tutorial, and thank you for reading them.&lt;/p&gt;</content><author><name>Gerry Leo Nugroho</name></author><category term="Python-Pandas" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;You&amp;#39;ve made it this far, congratulations on achieving your first essential data-scienctist project. But there&amp;#39;s more, if you wish to explore further or perhaps want to experiment, fork this Jupyter Notebook else even copy them to your working directory. I made everthing available on my &lt;a href=&quot;https://github.com/leonism/sample-superstore&quot;&gt;GitHub repository&lt;/a&gt;. Got any questions? Fell free to ask them down below in the comment section, I&amp;#39;ll try to get back to any inquiries as soon as I could. Hope you enjoy this tutorial, and thank you for reading them.&lt;/p&gt;</content><author><name>Gerry Leo Nugroho</name></author><category term="Python-Pandas" /><summary type="html">1. Introduction This tutorial is intended to give some quick, fundamental and brief overview on how to explore a dataset, which in this case is the Sample SuperStore. And to my best knowledge, it&amp;#39;s coming from a fictional e-commerce or online marketplace company&amp;#39;s annual sales figures. But the bottom line, the dataset would provide you with sufficient information on how you may work with an actual real life data. Among other things, this dataset consists of the following data types that may showcase the actual capabilities of what Pandas capable of delivering.</summary></entry></feed>

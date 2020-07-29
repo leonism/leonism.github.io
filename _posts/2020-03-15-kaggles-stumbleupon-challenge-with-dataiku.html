@@ -1,19 +1,16 @@
 ---
 title: Kaggle's StumbleUpon Challenge with Dataiku
+subtitle: Two Class Classification & Logisitic Regression
 date: 2020-03-15 01:25:23 Z
 categories: dataiku
 layout: post
-subtitle: Two Class Classification & Logisitic Regression
-description: Learn how to run a machine learning project with StumbleUpon Dataset
-  with Dataiku platform and ready for Kaggle's submission.
+description: Learn how to run a machine learning project with StumbleUpon Dataset with Dataiku platform and ready for Kaggle's submission.
 keywords: StumbleUPon, Dataiku, Machine Learning, Prediction, EDA
-background: "/img/posts/07.jpg"
+background: "/assets/img/posts/07.jpg"
 comments: true
 ---
 
-<style>.aligncenter {text-align: center;}</style>
-
-<h3 id="1-introduction">1. Introduction</h3>
+<h3 id="Introduction">1. Introduction</h3>
 
 <p>This Kaggle's <a href="https://www.kaggle.com/c/stumbleupon" title="StumbleUpon challenge">StumbleUpon challenge</a> has been around for sometimes by now, but I thought it'd be a great exercise to do them again, and this time we'll do it with the help of Dataiku platform. The idea is pretty much simple, how can we predict if an article getting submitted to StumbleUpon is an "<em>ephemeral</em>" or an "<em>evergreen</em>". And as usual, Kaggle will provide you with both a train and test datasets from their site. Following paragraphs are simply taken from Kaggle's StumbleUpon page.</p>
 
@@ -41,14 +38,14 @@ comments: true
 <p>My approach toward this is pretty much straightforward, as a first step, it's required for you to download the whole dataset and have them imported to your working Dataiku project space. I would assume you know your way around to navigate the Dataiku's interface and be able to have the project space and data importing properly registered. And here's how my current data workflow would look like.</p>
 
 <p class="aligncenter">
-<img data-src="/img/posts/stumbleupon-dataiku/screencap-01.jpg" src="/img/posts/stumbleupon-dataiku/screencap-01.jpg" class="img-fluid" alt="stumble-upon" >
+<img data-src="/assets/img/posts/stumbleupon-dataiku/screencap-01.jpg" src="/assets/img/posts/stumbleupon-dataiku/screencap-01.jpg" class="img-fluid" alt="stumble-upon" >
 </p>
 
 <h3 id="4-datacleaning">3. Cleaning-up The Data</h3>
 <p>As with many other Machine Learning project out there, you wouldn't get a Model friendly dataset from the whole beginning of finding them. So our first objective would be to clean our dataset and turn them to a more machine learning friendly algorithm. Our current dataset's still requiring us to perform a lot of cleaning, since we can see that we still have unwanted characters much like a question mark, here and there.</p>
 
 <p class="aligncenter">
-<img data-src="/img/posts/stumbleupon-dataiku/screencap-02.jpg" src="/img/posts/stumbleupon-dataiku/screencap-02.jpg" class="img-fluid" alt="stumble-upon" >
+<img data-src="/assets/img/posts/stumbleupon-dataiku/screencap-02.jpg" src="/assets/img/posts/stumbleupon-dataiku/screencap-02.jpg" class="img-fluid" alt="stumble-upon" >
 </p>
 
 <h3 id="4-datacleaning">4. Data Modeling</h3>
@@ -57,7 +54,7 @@ comments: true
 <p>And for the case, Dataiku is shipped with the feature by default. Choose the 'Two Class Classification' from the drop down menu and pick the label as the target that we wish predict, as shown by the pciture below.</p>
 
 <p class="aligncenter">
-<img data-src="/img/posts/stumbleupon-dataiku/screencap-03.jpg" src="/img/posts/stumbleupon-dataiku/screencap-03.jpg" class="img-fluid" alt="stumble-upon" >
+<img data-src="/assets/img/posts/stumbleupon-dataiku/screencap-03.jpg" src="/assets/img/posts/stumbleupon-dataiku/screencap-03.jpg" class="img-fluid" alt="stumble-upon" >
 </p>
 
 
@@ -73,14 +70,14 @@ comments: true
 </ul>
 
 <p class="aligncenter">
-<img data-src="/img/posts/stumbleupon-dataiku/screencap-04.jpg" src="/img/posts/stumbleupon-dataiku/screencap-04.jpg" class="img-fluid" alt="stumble-upon" >
+<img data-src="/assets/img/posts/stumbleupon-dataiku/screencap-04.jpg" src="/assets/img/posts/stumbleupon-dataiku/screencap-04.jpg" class="img-fluid" alt="stumble-upon" >
 </p>
 
 <h3 id="5-test-againts-the-test">6. Run The Model Againts The Test Dataset</h3>
 <p>Now that we've settled our model's score, it's time for the actual action of the game, which is testing them againts our test dataset. Simply click on the Machine Learning algorithm icon on the dataflow, click the score icon on the right hand panel and choose the to test them againts the test dataset. It's pretty much by straight forward, so simply just accept the default configuration that Dataiku would offer you.</p>
 
 <p class="aligncenter">
-<img data-src="/img/posts/stumbleupon-dataiku/screencap-06.jpg" src="/img/posts/stumbleupon-dataiku/screencap-06.jpg" class="img-fluid" alt="stumble-upon" >
+<img data-src="/assets/img/posts/stumbleupon-dataiku/screencap-06.jpg" src="/assets/img/posts/stumbleupon-dataiku/screencap-06.jpg" class="img-fluid" alt="stumble-upon" >
 </p>
 
 
@@ -88,7 +85,7 @@ comments: true
 <p>And there you have it, as our modeling and algorithm from previous walked-through scenario tested againts the test dataset, it would  by the end of it, yield us the following results. Please scroll to the right and by each row of the test dataset, now is getting added with 3 additional coloumns. First would be the <em>proba_0</em>, <em>proba_1</em> and <em>prediction</em>. Luckily, this dataset is somewhat relatively easier to work with, and by some minor tweaks it already giving us a decent final score to test our test dataset againts with.</p>
 
 <p class="aligncenter">
-<img data-src="/img/posts/stumbleupon-dataiku/screencap-07.jpg" src="/img/posts/stumbleupon-dataiku/screencap-07.jpg" class="img-fluid" alt="stumble-upon" >
+<img data-src="/assets/img/posts/stumbleupon-dataiku/screencap-07.jpg" src="/assets/img/posts/stumbleupon-dataiku/screencap-07.jpg" class="img-fluid" alt="stumble-upon" >
 </p>
 
 
@@ -96,7 +93,7 @@ comments: true
 <p>What comes next after those previous preparation of data modeling and testing, comes the actual submission phase. At the Kaggle site, they would provide you with a template of the accepted data submission format. We simply need to follow it, make a local copy of our results by downloading from the data flow diagram, and have them uploaded to Kaggle submission button.</p>
 
 <p class="aligncenter">
-<img data-src="/img/posts/stumbleupon-dataiku/screencap-08.jpg" src="/img/posts/stumbleupon-dataiku/screencap-08.jpg" class="img-fluid" alt="stumble-upon" >
+<img data-src="/assets/img/posts/stumbleupon-dataiku/screencap-08.jpg" src="/assets/img/posts/stumbleupon-dataiku/screencap-08.jpg" class="img-fluid" alt="stumble-upon" >
 </p>
 
 
@@ -104,7 +101,7 @@ comments: true
 <p>After the submission process you'll get the final score in returned from Kaggle, as with the current submission, we're only getting 0.75, which accoding to my opinion wasn't that so bad. Cause after all, we're only scracthing from the surface, and only from a high level overview. But rest asure you can always tweaks your model and improvise your model again and have them resubmited to Kaggle in ordernto get better final score. But as of now, that should do it as for this current article</p>
 
 <p class="aligncenter">
-<img data-src="/img/posts/stumbleupon-dataiku/screencap-09.jpg" src="/img/posts/stumbleupon-dataiku/screencap-09.jpg" class="img-fluid" alt="stumble-upon" >
+<img data-src="/assets/img/posts/stumbleupon-dataiku/screencap-09.jpg" src="/assets/img/posts/stumbleupon-dataiku/screencap-09.jpg" class="img-fluid" alt="stumble-upon" >
 </p>
 
 

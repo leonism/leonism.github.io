@@ -30,13 +30,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This tutorial will cover the FIFA clustering method in machine learning using Dataiku platform to discover the best Machine Learning algorithm." />
 <meta property="og:description" content="This tutorial will cover the FIFA clustering method in machine learning using Dataiku platform to discover the best Machine Learning algorithm." />
-<link rel="canonical" href="http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/" />
-<meta property="og:url" content="http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/" />
+<link rel="canonical" href="http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/" />
+<meta property="og:url" content="http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/" />
 <meta property="og:site_name" content="DgPond.Com" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-06-29T01:25:23+00:00" />
 <script type="application/ld+json">
-{"description":"This tutorial will cover the FIFA clustering method in machine learning using Dataiku platform to discover the best Machine Learning algorithm.","headline":"FIFA’s Data Mining &amp; Unsupervised Clustering Techniques with Dataiku","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/"},"@type":"BlogPosting","url":"http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/","author":{"@type":"Person","name":"Gerry Leo Nugroho"},"dateModified":"2020-06-29T01:25:23+00:00","datePublished":"2020-06-29T01:25:23+00:00","@context":"https://schema.org"}</script>
+{"description":"This tutorial will cover the FIFA clustering method in machine learning using Dataiku platform to discover the best Machine Learning algorithm.","headline":"FIFA’s Data Mining &amp; Unsupervised Clustering Techniques with Dataiku","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/"},"@type":"BlogPosting","url":"http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/","author":{"@type":"Person","name":"Gerry Leo Nugroho"},"dateModified":"2020-06-29T01:25:23+00:00","datePublished":"2020-06-29T01:25:23+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta itemprop="description" name="description" content="This tutorial will cover the FIFA clustering method in machine learning using Dataiku platform to discover the best Machine Learning algorithm." />
@@ -48,32 +48,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:title" content="FIFA's Data Mining & Unsupervised Clustering Techniques with Dataiku">
 
 
-<meta name="twitter:url" content="http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/">
+<meta name="twitter:url" content="http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/">
 
 
 <meta name="twitter:description" content="This tutorial will cover the FIFA clustering method in machine learning using Dataiku platform to discover the best Machine Learning algorithm.">
 
 
-<meta name="twitter:image:src" content="http://localhost:8080/img/posts/13.jpg">
+<meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/13.jpg">
 
 
 <meta property='og:title' content="FIFA's Data Mining & Unsupervised Clustering Techniques with Dataiku"/>
 
 
-<meta property='og:image' content="http://localhost:8080/img/posts/13.jpg"/>
+<meta property='og:image' content="http://localhost:4000/assets/img/posts/13.jpg"/>
 
 
 <meta property='og:description' content="This tutorial will cover the FIFA clustering method in machine learning using Dataiku platform to discover the best Machine Learning algorithm.">
 
-<meta property='og:url' content='content="http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/" />
-<meta property='og:image' content="http://localhost:8080/img/posts/13.jpg" />
+<meta property='og:url' content='content="http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/" />
+<meta property='og:image' content="http://localhost:4000/assets/img/posts/13.jpg" />
 <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
 <link rel="stylesheet" href="/assets/vendor/highlight/styles/kimbie.dark.css">
 <link rel="stylesheet" href="/assets/main.css">
-<link rel="canonical" href="http://localhost:8080/FIFA-data-mining-unsupervised-clustering-dataiku/">
+<link rel="canonical" href="http://localhost:4000/FIFA-data-mining-unsupervised-clustering-dataiku/">
 <link rel="alternate" type="application/rss+xml" title="DgPond.Com" href="/feed.xml">
 <link rel="icon" href="/assets/favicon-96x96.png" type="assets" sizes="96x96">  
 <script src="/assets/vendor/highlight/highlight.pack.js"></script>
@@ -110,7 +110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Page Header -->
 
-<header class="masthead" style="background-image: url('/img/posts/13.jpg')">
+<header class="masthead" style="background-image: url('/assets/img/posts/13.jpg')">
   
     <div class="overlay"></div>
     <div class="container">
@@ -137,57 +137,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <style>.aligncenter {text-align: center;}</style>
-
-<h3 id="1-introduction">1. Introduction</h3>
-<p>If there&#39;s one thing similar about an interesting dataset and a good rerun football&#39;s match on TV, is that they&#39;re both doing pretty excellent job at keeping everyone&#39;s safe at home during this time of the pandemic. And in all honesty, I&#39;m not a data-scientist, nor a dev guru. I just recently got myself exposed to  <strong>Machine Learning, Data Mining</strong>  and  <strong>Artificial Intelligent</strong>  in general, while doing them in both  <strong>Dataiku</strong> and  <strong>Python (Pandas, NumPy and SciKit</strong> libraries<strong>)</strong>, somewhere a little over then 3 months period of time. And without any further ado, here&#39;s my take to the FIFA conundrum&#39;s challenge.</p>
+        <h3 id="1-introduction">1. Introduction</h3>
+<p>If there&#39;s one thing similar about an interesting dataset and a good rerun football&#39;s match on TV, is that they&#39;re both doing pretty excellent job at keeping everyone&#39;s safe at home during this time of the pandemic. And in all honesty, I&#39;m not a data-scientist, nor a dev guru. I just recently got myself exposed to <strong>Machine Learning, Data Mining</strong> and <strong>Artificial Intelligent</strong> in general, while doing them in both  <strong>Dataiku</strong> and  <strong>Python (Pandas, NumPy and SciKit</strong> libraries<strong>)</strong>, somewhere a little over then 3 months period of time. And without any further ado, here&#39;s my take to the FIFA conundrum&#39;s challenge.</p>
 
 <h3 id="2-dataflow">2. Dataflow</h3>
 <p>And since the challenge is not to  <strong>&#39;predict&#39;</strong>  any variables, rather to &#39;<strong>group&#39;</strong> or &#39;<strong>cluster&#39;</strong>  the existing dataset from the player&#39;s skillsets, in reflect to their  <strong>wages rate</strong>. Here&#39;s what my current flow would look like, and don&#39;t bother much on the 2 additional datasets, as they&#39;re merely exported from the existing model, so that I may explore them further later on. And to follow along, here&#39;s the link to download the dataset in my 
 <a href="https://github.com/leonism/dataiku-FIFA/blob/master/uploads/Conundrum_13_Data/Conundrum_13_Data.csv">Github repository</a>.</p>
 
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/workflow-diagram.png" src="/img/posts/fifa-dataiku/workflow-diagram.png" class="img-fluid" alt="dataiku-fifa-analysis" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/workflow-diagram.png" src="/assets/img/posts/fifa-dataiku/workflow-diagram.png" class="img-fluid" alt="dataiku-fifa-analysis" style="cursor: pointer;"></p>
 
 
 <h3 id="3-prepare-recipes">3. Prepare Recipes</h3>
 <p>And here&#39;s how I go about on the prepare recipes, nothing out of the ordinary. Just converting <strong><em>categorical</em></strong> to <strong><em>numerical</em></strong> values, through the <strong><em>one-hot encoding</em></strong> and filling up the &#39;<strong><em>NaN</em></strong>&#39; with median values, while grouping them to have better clarity, if ever the need occur for me to go back and revise anything again for future reference.</p>
 
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/prepare-recipe.jpg" src="/img/posts/fifa-dataiku/prepare-recipe.jpg" class="img-fluid" alt="prepare recipe" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/prepare-recipe.jpg" src="/assets/img/posts/fifa-dataiku/prepare-recipe.jpg" class="img-fluid" alt="prepare recipe" style="cursor: pointer;"></p>
 
 
 <h3 id="4-data-modeling-training">4. Data Modeling &amp; Training</h3>
 <p>While on the  <strong>modeling</strong>  and  <strong>training</strong>  steps, I choose the &#39;<strong><em>Interactive Clustering</em></strong>&#39; machine-learning algorithm, which in returned, delivered me a sufficient scoring value. As a side note, Dataiku provide you with various Machine Learning Algorithm according to your prediction methods requirement. Be it for  <strong>Supervised Learning</strong>  (develop predictive model based on both input and output data) and <strong>Unsupervised Learning (</strong>group and interpret data based only on input data). And for the article alone, will be utilizing the later version of Unsupervised Learning for data mining/clustering.</p>
 
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/model-results.png" src="/img/posts/fifa-dataiku/model-results.png" class="img-fluid" alt="dataiku-data-modeling" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/model-results.png" src="/assets/img/posts/fifa-dataiku/model-results.png" class="img-fluid" alt="dataiku-data-modeling" style="cursor: pointer;"></p>
 
 <h3 id="5-data-clustering">5. Data Clustering</h3>
 <p>On to the clustering variables name, I simply identified them in the grading manner, starting from <strong>&#39;<em>Grading A</em>&#39;</strong>, as the most top-knot performer, all the way down to the least performing one marked with <strong>&#39;<em>Grading E</em>&#39;</strong>.</p>
 
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/grading-classification3.jpg" src="/img/posts/fifa-dataiku/grading-classification3.jpg" class="img-fluid" alt="dataiku-grading-classification" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/grading-classification3.jpg" src="/assets/img/posts/fifa-dataiku/grading-classification3.jpg" class="img-fluid" alt="dataiku-grading-classification" style="cursor: pointer;"></p>
 
 <h3 id="6-cluster-plot">6. Cluster Plot</h3>
 <p>And here&#39;s how my cluster plot would look like, obviously the better the grade, the least volume of players getting included in them.</p>
 <p><strong>Acceleration x Wage</strong></p>
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/acc-wages.png" src="/img/posts/fifa-dataiku/acc-wages.png" alt="dataiku-Acceleration-Wage" class="img-fluid" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/acc-wages.png" src="/assets/img/posts/fifa-dataiku/acc-wages.png" alt="dataiku-Acceleration-Wage" class="img-fluid" style="cursor: pointer;"></p>
 
 <p><strong>Sliding Tackle x Wage</strong></p>
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/sliding-tackle-wages.png" src="/img/posts/fifa-dataiku/sliding-tackle-wages.png" class="img-fluid" alt="dataiku-Tackle-Wage" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/sliding-tackle-wages.png" src="/assets/img/posts/fifa-dataiku/sliding-tackle-wages.png" class="img-fluid" alt="dataiku-Tackle-Wage" style="cursor: pointer;"></p>
 
 <h3 id="7-grading-variables">7. Grading Variables</h3>
 <p>And for sure, those who sit at the <strong>Grading A</strong> level would stand above the average threshold measurements (though, that&#39;s not always the case with other included variables, which I&#39;m about to show down below).</p>
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/variable-significant.jpg" src="/img/posts/fifa-dataiku/variable-significant.jpg" alt="variable-significant" class="img-fluid" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/variable-significant.jpg" src="/assets/img/posts/fifa-dataiku/variable-significant.jpg" alt="variable-significant" class="img-fluid" style="cursor: pointer;"></p>
 
 <h3 id="8-values-proposition">8. Values Proposition</h3>
 <p>And coming back again to the initial question, <code>&quot;Creating a flow that outputs a value proposition in term of the wages&quot;</code>. I think I didn&#39;t include the players name and their nationalities in my modeling for a couple of reasons. In my opinions, those two variables are just way too subjective to get included. In a sense, you could be a top-knot player, regardless of what your &#39;Names&#39; would sound like, and of course your &#39;Nationalities&#39;.</p>
 
 <p>So I&#39;ve done the DSS flow diagram, while the followings are my list of &#39;value proposition&#39; that contributed of being one &#39;Grading-A&#39; player in the field.</p>
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/top-5-values-proposition.png" src="/img/posts/fifa-dataiku/top-5-values-proposition.png" alt="top-5-values-proposition" class="img-fluid" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/top-5-values-proposition.png" src="/assets/img/posts/fifa-dataiku/top-5-values-proposition.png" alt="top-5-values-proposition" class="img-fluid" style="cursor: pointer;"></p>
 
 <h3 id="9-top-5-values-proposition">9. Top 5 Values Proposition</h3>
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/values-by-distribution.png" src="/img/posts/fifa-dataiku/values-by-distribution.png" alt="values-by-distribution" class="img-fluid" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/values-by-distribution.png" src="/assets/img/posts/fifa-dataiku/values-by-distribution.png" alt="values-by-distribution" class="img-fluid" style="cursor: pointer;"></p>
 
 <h3 id="10-top-5-values-proposition-by-distribution">10. Top 5 Values Proposition By Distribution</h3>
-<p class="aligncenter"><img data-src="/img/posts/fifa-dataiku/values-by-distribution-grading.png" src="/img/posts/fifa-dataiku/values-by-distribution-grading.png" alt="values-by-distribution-grading" class="img-fluid" style="cursor: pointer;"></p>
+<p class="aligncenter"><img data-src="/assets/img/posts/fifa-dataiku/values-by-distribution-grading.png" src="/assets/img/posts/fifa-dataiku/values-by-distribution-grading.png" alt="values-by-distribution-grading" class="img-fluid" style="cursor: pointer;"></p>
 
 <h3 id="11-correlation-matrix">11. Correlation Matrix</h3>
 <p>The very first correlation analysis consists of plotting the <em>Correlation matrix</em> for numerical variables. For each couple of numerical variables, this computes the &quot;strength&quot; of the correlation (called the Pearson coefficient):</p>
@@ -198,8 +196,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 <p>Since it does not really make sense to print this correlation plot for hundred of variables, we are restricting it to the first 50 numerical variables of the dataset.</p>
 <p class="aligncenter">
-<img src="/img/posts/fifa-dataiku/correlation-matrix.png" alt="correlation-matrix" class="img-fluid" style="cursor: pointer;">
-<img src="/img/posts/fifa-dataiku/correlation-matrix-2.png" alt="correlation-matrix-2" class="img-fluid" style="cursor: pointer;">
+<img src="/assets/img/posts/fifa-dataiku/correlation-matrix.png" alt="correlation-matrix" class="img-fluid" style="cursor: pointer;">
+<img src="/assets/img/posts/fifa-dataiku/correlation-matrix-2.png" alt="correlation-matrix-2" class="img-fluid" style="cursor: pointer;">
 </p>
 
 <h3 id="11-jupyter-notebook">11. Jupyter Notebook</h3>
