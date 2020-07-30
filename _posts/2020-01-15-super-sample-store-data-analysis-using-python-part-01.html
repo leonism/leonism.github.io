@@ -59,7 +59,7 @@ comments: true
 
 <p>By default, Panda&#39;s built-in functionality, <strong>only showing 20 columns and 10 rows</strong> for each dataset, every time time you try to display them in the view. If you notice from the tabular data above, the dataset get truncated with triple dots sign <strong>&#39;...&#39;</strong> both for the rows and the columns. And since this dataset has 10800 rows with 21 columns, it&#39;ll only show the first 10 records for the row, with only 20 columns to the right instead of 21. As a side note, you can scroll the dataset both to the right and to the bottom, that way you can see the actual dataset content.</p>
 
-<h3 id="5-dropping-the-row-id-">5. Dropping The &quot;Row ID&quot;</h1>
+<h3 id="5-dropping-the-row-id-">5. Dropping The &quot;Row ID&quot;</h3>
 <p>The <em><code>&quot;Row ID&quot;</code></em> column is not really that informative, I think it would be safe enough for us to simply just delete them. That way, it would give us much more clarity over our dataset.</p>
 
 <ul>
@@ -84,7 +84,7 @@ comments: true
 <p>As you can see from the above table, we don&#39;t have the &#39;<strong>ROW ID</strong>&#39; no longer in place  and instead, it&#39;s being replaced by the &#39;<strong>Order ID</strong>&#39;.</p>
 
 
-<h3 id="6-change-the-index-column">6. Change &quot;The Index&quot; Column</h1>
+<h3 id="6-change-the-index-column">6. Change &quot;The Index&quot; Column</h3>
 <p>By each time you&#39;re using <code>pd.read_csv(&#39;somedata.csv&#39;)</code>, that would yield the dataset&#39;s actual rows and columns, and we certainly have quite an extensive records of data, as being displayed from the previous function.</p>
 <p>As you may notice, the first column isn&#39;t the actual <em><code>&quot;Row ID&quot;</code></em> column, rather it&#39;s the default built-in feature Panda&#39;s bringing into the dataset. Let&#39;s try to change that into something much more useful. Now, let&#39;s revisit our previous Panda&#39;s function, but this time we add another parameter, the _<code>&quot;index_col&quot;</code>_ to be exact.</p>
 <p>Since that we wish to redo them again over a clean dataset, let&#39;s just call them again one more time with the<br>
@@ -106,7 +106,7 @@ comments: true
 <p><span class="caption text-muted">The Index column has been changed, from default builtin, to &#39;Order ID&#39; column.</span></p>
 <p>Once that we tried to add the additional parameter, as you may notice, the first column have changed to &#39;<code>Order ID&#39;</code> column, rather then the previous Panda&#39;s built-in index column, and the other thing was, the fine print below each table now have changed, from 21 columns, to only 20 columns instead.</p>
 
-<h3 id="7-drop-the-row-id-change-the-index">7. Drop the Row ID &amp; Change The Index</h1>
+<h3 id="7-drop-the-row-id-change-the-index">7. Drop the Row ID &amp; Change The Index</h3>
 <p>On to our another objective, what if we wish to combine both of the features, with dropping the <code>&#39;Row ID</code>&#39; and to change the <code>&#39;Index</code>&#39; columns at the same time, so that we could get even leaner dataset to work with. With that kind of objective, we might need to combine both of the syntax to achive our objective.</p>
 <pre><code>df_orders.drop(<span class="hljs-string">"Row ID"</span>, <span class="hljs-attr">axis=</span><span class="hljs-number">1</span>, <span class="hljs-attr">inplace=</span><span class="hljs-literal">True</span>, <span class="hljs-attr">index_col=</span>'<span class="hljs-keyword">Order</span> <span class="hljs-title">ID</span>')
 </code></pre><ul>
