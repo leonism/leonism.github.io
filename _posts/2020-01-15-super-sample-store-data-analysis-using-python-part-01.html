@@ -103,7 +103,6 @@ comments: true
 <p class="aligncenter">
 <img data-src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-03.jpg" src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-03.jpg"  class="lazy" alt="super-sample-store-data-analysis-using-python" ></p>
 
-
 <p><span class="caption text-muted">The Index column has been changed, from default builtin, to &#39;Order ID&#39; column.</span></p>
 <p>Once that we tried to add the additional parameter, as you may notice, the first column have changed to &#39;<code>Order ID&#39;</code> column, rather then the previous Panda&#39;s built-in index column, and the other thing was, the fine print below each table now have changed, from 21 columns, to only 20 columns instead.</p>
 
@@ -147,7 +146,7 @@ df_orders
 <img data-src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-05.jpg" src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-05.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
 
 <p><span class="caption text-muted">Changing the default view in Pandas (illustration got truncated).</span></p>
-<h3 id="9-the-dataset-first-5-rows">9. The Dataset First 5 Rows</h1>
+<h3 id="9-the-dataset-first-5-rows">9. The Dataset First 5 Rows</h3>
 <p>Here&#39;s another Pandas built-in method that may come handy. When you fell like taking a quick peek of the first 5 recrods from the top, the following code would deliver you those ouputs.</p>
 <ul>
 <li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
@@ -160,7 +159,7 @@ df_orders
 <img data-src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-06.jpg" src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-06.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
 <p><span class="caption text-muted">Viewing the first 5 rows of a dataset (illustration got truncated).</span></p>
 
-<h3 id="10-the-dataset-last-5-rows">10. The Dataset Last 5 Rows</h1>
+<h3 id="10-the-dataset-last-5-rows">10. The Dataset Last 5 Rows</h3>
 <p>Much like the above previous syntax, the similar can be apply to the bottom 5 records coming from your dataset. And you guess it right, the syntax would be <code>.tail()</code> and that would give you the last 5 records from the dataset.</p>
 <ul>
 <li><code>df_orders</code> = is the name of the variable, that will be using throughout the example of this tutorial.</li>
@@ -222,7 +221,7 @@ df_orders.columns = [<span class="hljs-string">'OrderDate'</span>, <span class="
 <img data-src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-11.jpg" src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-11.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
 <p><span class="caption text-muted">The columns after being renamed. (illustration got truncated).</span></p>
 
-<h3 id="15-columns-data-type">15. Columns Data Type</h1>
+<h3 id="15-columns-data-type">15. Columns Data Type</h3>
 <p>Many times before you wish to explore further your columns in a dataset with some operation, you may need to make sure it&#39;s the correct data type that you&#39;re working with. For example, you wouldn&#39;t be able to do a division operation over a Timestamp data format, or multiply a String with with another string for that matter.</p>
 <ul>
 <li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
@@ -238,7 +237,7 @@ df_orders.<span class="hljs-keyword">info</span>()
 <img data-src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-12.jpg" src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-12.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
 <p><span class="caption text-muted">Viewing the data types of the dataset (illustration got truncated).</span></p>
 
-<h3 id="16-incorrect-columns-data-type">16. Incorrect Columns Data Type</h1>
+<h3 id="16-incorrect-columns-data-type">16. Incorrect Columns Data Type</h3>
 <p>As we can see from the above snippets, we have noticed there are couple of columns data types that were set incorrectly. For instance, the <code>OrderDate</code> data type was set to <code>object</code> data type instead of <code>datetime</code>, or the <code>PostalCode</code> was set to <code>float</code> data type, though you wouldn&#39;t do any calculation on top of it. Somewhere down the line with that kind of flaws, will lead us to even bigger problem if we don&#39;t try to fix them now. Let&#39;s try to patch those data types with the following methods.</p>
 <ul>
 <li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
