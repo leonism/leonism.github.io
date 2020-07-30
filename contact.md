@@ -6,7 +6,7 @@ background: '/assets/img/bg-contact.jpg'
 form: true
 ---
 
-<p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
+<p>Want to get in touch with me? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
 <form name="sentMessage" id="contactForm" name="sentMessage" novalidate action="https://formspree.io/gerryleonugroho@gmail.com" method="POST"> 	
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
