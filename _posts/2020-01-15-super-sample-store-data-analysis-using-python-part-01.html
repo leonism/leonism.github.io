@@ -22,7 +22,7 @@ comments: true
 
 <p>And with that being said, let&#39;s try to explore further the dataset, with the various built-in functionalities in the Panda&#39;s library for Python have to offer, while utilizing the <a href="https://jupyter.org/">Jupyter Notebook</a> as the main IDE of choice. And please don&#39;t forget to download the CSV file used on this project, you can download it from my GitHub account found <a href="https://github.com/leonism/sample-superstore/blob/master/data/superstore.csv">here</a>.</p>
 
-<h3 id="2-installation">2. Installation</h1>
+<h3 id="2-installation">2. Installation</h3>
 
 <p>First and foremost, this data exploration would assume you, to have one proper and working installation of the <a href="https://www.python.org/">Python</a> programming language. Secondly you have the <a href="https://jupyter.org/">Jupyter Notebook</a> and the <a href="https://pandas.pydata.org/">Pandas</a> library installed on your workstation, which we will use throughout the course of this data exploration.</p>
 
@@ -34,14 +34,14 @@ comments: true
 <li><a href="https://jupyter.org/">Jupyter Official Website</a>.</li>
 </ul>
 
-<h3 id="3-importing-library">3. Importing Library</h1>
+<h3 id="3-importing-library">3. Importing Library</h3>
 <p>Next, we need to load the Panda libraries onto our Jupyter Notebook environment. This way, it would tell Python, through the means available at Jupyter Notebook, to boot-up so we could utilize its built-ins functionalities available. Here&#39;s a snippet on how to do load your Pandas to Jupyter Notebook environement:</p>
 
 <pre><code><span class="hljs-meta"># Importing packages</span>
 <span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
 </code></pre><p>Now, that we have settled our first challenge, let&#39;s move further to read the datasets coming from a CSV file.</p>
 
-<h3 id="4-reading-dataset">4. Reading Dataset</h1>
+<h3 id="4-reading-dataset">4. Reading Dataset</h3>
 <p>The following code would imply these instructions</p>
 <ul>
 <li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
@@ -129,7 +129,7 @@ df_orders.drop(<span class="hljs-string">"Row ID"</span>, <span class="hljs-attr
 <p><span class="caption text-muted">The Index column has been changed, from default builtin, to &#39;Order ID&#39; column.</span></p>
 <p>Now, as you may see, from the below printed information, we only have 19 columns remaining left, coming from the initial 21 columns previously being shown. Now you may ask, &quot;But how come it&#39;s down to 19 columns, while we recall we only dropped 1 column?&quot;. The answer to that is due to the <code>&#39;index_col</code>&#39; method, whereas we define the <code>&#39;Order ID</code>&#39; to settle as the Index of the dataset. Pandas doesn&#39;t count that to a column, rather just another indexing attribution in the dataset.</p>
 
-<h3 id="8-default-number-rows-columns">8. Default Number Rows &amp; Columns</h1>
+<h3 id="8-default-number-rows-columns">8. Default Number Rows &amp; Columns</h3>
 <p>Let&#39;s try to set the maximum column and row to display, since by default the pandas library would display <strong>10 records</strong> of rows in total for a single dataset. The first 5 would coming from the top records, and the remaining would be coming from the last 5 records as a whole.</p>
 <p>But that&#39;s a little too much of information anyone could digest in a short glimpse, why don&#39;t we just minimize them down to 5 records instead. The same thing with the columns view, whereas Pandas would display you 20 columns, but since our current dataset only have 19 of them, then that should be fine.</p>
 <ul>
@@ -192,7 +192,7 @@ df_orders
 <li><code>19</code> coloumns</li>
 </ul>
 
-<h3 id="13-dataset-columns">13. Dataset Columns</h1>
+<h3 id="13-dataset-columns">13. Dataset Columns</h3>
 <p>Imagine that you&#39;re working with a large dataset, and by large, not just merely on the amounts of rows that it&#39;d produce. But also on the amount of columns spreaded from left to right. Good thing we&#39;re only working a 19 columns (from previously 21 columns in our dataset), now wouldn&#39;t it be nice to have a method to display all the columns available in our dataset? Well the good news is, Pandas shipped with a builtin method just to achive that.</p>
 <ul>
 <li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
@@ -257,7 +257,7 @@ df_orders.<span class="hljs-keyword">info</span>()
 <img data-src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-10.jpg" src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-10.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
 <p><span class="caption text-muted">We&#39;ve now changed the data types.</span></p>
 
-<h3 id="17-dataset-statistic-figures">17. Dataset Statistic Figures</h1>
+<h3 id="17-dataset-statistic-figures">17. Dataset Statistic Figures</h3>
 <p>If you&#39;re more into the statistician type, perhaps you may be also interested by the following methods to generate the figures with only a single line of <code>.describe</code> Pandas method.</p>
 <ul>
 <li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
@@ -281,7 +281,7 @@ df_orders.describe(<span class="hljs-keyword">include</span>=<span class="hljs-s
 <p class="aligncenter"><img data-src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-14.jpg" src="/assets/img/posts/super-sample-store-data-analysis-using-python-part-01/screencap-14.jpg" class="img-fluid" alt="super-sample-store-data-analysis-using-python" ></p>
 <p><span class="caption text-muted">Decent Statistic Facts on The Dataset.</span></p>
 
-<h3 id="18-statistic-figures">18. Statistic Figures</h1>
+<h3 id="18-statistic-figures">18. Statistic Figures</h3>
 <p>The following code would imply these instructions</p>
 <ul>
 <li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
@@ -298,7 +298,7 @@ df_orders.describe(<span class="hljs-keyword">include</span>=<span class="hljs-s
 <pre><code>df_orders[<span class="hljs-string">"Sales"</span>].<span class="hljs-built_in">min</span>()
 </code></pre><p>Would give you the value of <code>&quot;0.444&quot;</code>.</p>
 
-<h3 id="19-exporting-dataset">19. Exporting Dataset</h1>
+<h3 id="19-exporting-dataset">19. Exporting Dataset</h3>
 <p>Once that we&#39;ve satisfied with our results, it&#39;s time to export them. So let&#39;s export them a new CSV dataset, so we could work with them on the next notebook tutorial.</p>
 <ul>
 <li>_<code>df_orders</code>_ = is the name of the variable, that will be using throughout the example of this tutorial.</li>
@@ -308,7 +308,7 @@ df_orders.describe(<span class="hljs-keyword">include</span>=<span class="hljs-s
 <pre><code>df_orders.to_csv(<span class="hljs-string">'data/df_orders_exported.csv'</span>, <span class="hljs-keyword">index</span> =<span class="hljs-keyword">False</span>)
 </code></pre><p>Now go ahead and check your current working directory. you may find your <code>df_orders_exported.csv</code> there.</p>
 
-<h3 id="20-bonus-stage">20. Bonus Stage</h1>
+<h3 id="20-bonus-stage">20. Bonus Stage</h3>
 <p>Now that we&#39;ve come a long way of exploring our <code>superstore.csv</code> dataset, it&#39;s time to dive a little bit deeper of what, both Python and Pandas capable of delivering. Let&#39;s try to create a custom class in Python by leveraging our builtin Pandas method available in the library.</p>
 <pre><code><span class="hljs-comment"># Let's create a class named `display_all`, by which later we call on the next command.</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">display_all</span>
